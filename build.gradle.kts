@@ -7,6 +7,7 @@ plugins {
 
 group = "io.github.wasabithumb"
 version = "0.1.0"
+description = "Java 21 implementation of the GOST R 34.12-2015 block cipher (RFC 8891) "
 
 repositories {
     mavenCentral()

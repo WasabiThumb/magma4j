@@ -10,6 +10,27 @@ in the 1970s, declassified in 1994, and revised in 2015. Despite its flaws, GOST
 as a [DES](https://en.wikipedia.org/wiki/Data_Encryption_Standard) alternative.
 
 ## Usage
+### Gradle (Kotlin DSL)
+```kotlin
+implementation("io.github.wasabithumb:magma4j:0.1.0")
+```
+
+### Gradle (Groovy DSL)
+```groovy
+implementation 'io.github.wasabithumb:magma4j:0.1.0'
+```
+
+### Maven
+```xml
+<dependency>
+  <groupId>io.github.wasabithumb</groupId>
+  <artifactId>magma4j</artifactId>
+  <version>0.1.0</version>
+  <scope>compile</scope>
+</dependency>
+```
+
+## Examples
 ### Simple
 ```java
 byte[] key = Magma.generateKey();
