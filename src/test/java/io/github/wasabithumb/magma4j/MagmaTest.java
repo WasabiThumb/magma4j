@@ -49,15 +49,14 @@ class MagmaTest {
     @Test
     void stream() {
         byte[] key = Magma.generateKey();
-        byte[] payload = new byte[42];
+        byte[] payload = new byte[4209];
         ThreadLocalRandom.current().nextBytes(payload);
 
         byte[] encrypted = assertDoesNotThrow(() -> {
-            try (ByteArrayOutputStream bos = new ByteArrayOutputStream();
-                 OutputStream mos = Magma.newOutputStream(bos, key)
-            ) {
-                mos.write(payload);
-                mos.flush();
+            try (ByteArrayOutputStream bos = new ByteArrayOutputStream()) {
+                try (OutputStream mos = Magma.newOutputStream(bos, key)) {
+                    mos.write(payload);
+                }
                 return bos.toByteArray();
             }
         });

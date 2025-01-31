@@ -82,11 +82,7 @@ public class MagmaOutputStream extends OutputStream {
 
     @Override
     public void flush() throws IOException {
-        try {
-            this.put();
-        } finally {
-            this.out.flush();
-        }
+        this.out.flush();
     }
 
     @Override
